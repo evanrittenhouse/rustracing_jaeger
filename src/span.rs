@@ -283,10 +283,15 @@ impl SpanContextState {
 impl fmt::Display for SpanContextState {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let dummy_parent_id = 0;
+        println!("FORMATTING");
         write!(
             f,
             "{}:{:x}:{:x}:{:x}",
-            self.trace_id, self.span_id, dummy_parent_id, self.flags
+            // using non-dummy parent for fun
+            self.trace_id,
+            self.span_id,
+            57,
+            self.flags
         )
     }
 }
