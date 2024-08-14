@@ -276,7 +276,7 @@ impl fmt::Display for SpanContextState {
         write!(
             f,
             "{}:{:x}:{:x}:{:x}",
-            self.trace_id, self.span_id, dummy_parent_id, self.flags
+            self.trace_id, self.span_id, self.span_id, self.flags
         )
     }
 }
